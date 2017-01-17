@@ -1,0 +1,73 @@
+<div ng-controller="homeController" id="home">
+
+  <div class="saveButtonPopup" ng-class="{'showPopup': showPopup}">
+    <p class="popupMessage">{{popupMessage}}</p>
+
+    <div>
+      <button class="popupButtonOne" ng-class="{'hideButtOne': hideButtOne}" type="button" ng-click="ok()">{{buttonOne}}</button>
+      <button class="popupButtonTwo"  ng-class="{'hideButtTwo': hideButtTwo}" type="button" ng-click="yes()">{{buttonTwo}}</button>
+      <button class="popupButtonThree"  ng-class="{'hideButtThree': hideButtThree}" type="button" ng-click="no()">{{buttonThree}}</button>
+    </div>
+  </div>
+
+
+
+  <div class="dashHeader">
+    <p ng-controller="homeController" class="headerButtons"><input class="butt" type = 'submit' value="logout" ng-click='logout()'></p>
+    <p class="headerButtons"><a href="#!/pinnersPage"><button class="butt">Top Pinners</button></a></p>
+    <p class="headerButtons"><a href="#!/momentsPage"><button class="butt">Moments</button></a></p>
+    <p class="headerButtons"><a href="#!/dashboard"><button class="butt1">Back</button></a></p>
+    <span class="stretch"></span>
+  </div>
+
+<!--
+  <div class="actualHeader">
+      <h1 class="headh1"><h2 class="homeh2">Welcome {{logged_user.name}}! ......... </h2></h1>
+  </div> -->
+
+  <!-- <div class="header">
+    <div  id="h2welcome">
+        <h2 class="homeh2">Welcome {{logged_user.name}}! ......... </h2>
+        <h3><a href="#!/dashboard">Back to Dash</a></h3>
+         <h3><a href="#!/modalTest">Modal Test Page!!</a></h3>
+    </div>
+    <div id="h2logout">
+      <input class="logout" type = 'submit' value="logout" ng-click='logout()'>
+    </div>
+  </div> -->
+  <div class="homeh1">
+      <h2>Welcome {{logged_user.name}}!</h2>
+  </div>
+
+    <div id="chartdiv"></div>
+    <div id="info" ng-hide="true">Seletced countries<span id="selected">-</span></div>
+<!-- ^^ this being commented out is causing an error. could hide it. -->
+    <div class="saveMap">
+      <button type="button" name="Button" id="saveButton" ng-click="saveMap()">Save your Map!</button>
+      <!-- {{currentlySelectedCountries -->
+
+    </div>
+
+      <!-- <p class="hiddenButtonDiv">Your map has been saved! Now that you've Pin'd it, Prove it!</p> -->
+
+  <div class="thing">
+    <h4>Select one of your countries, and share an experience!</h4>
+
+
+
+        <form ng-submit="newExperience()">
+          <label for="repeatSelect"> Select a Country: </label>
+          <select name="repeatSelect" id="repeatSelect" ng-model="data.model">
+            <option ng-repeat="country in saveSelected" value="{{country}}">{{country}}</option>
+          </select>
+        </form>
+
+
+
+
+
+
+
+  </div>
+
+</div>
